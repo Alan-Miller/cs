@@ -4,13 +4,12 @@ Computer science notes
 <br/>
 
 ## Recursion
-
 - Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
 - Real case scenarios: 
   - Populate a database (doing calculations for many rows).
 
 
-  <details>
+<details>
 <summary>Alternatives to recursion</summary>
 
   #### hard coded
@@ -93,3 +92,5 @@ Computer science notes
 
 ## Linked Lists
 - Each node has a pointer property pointing to the next node
+- Real case scenarios: 
+  - Photo site has user side with gallery and admin side and you need to keep order of images in gallery
