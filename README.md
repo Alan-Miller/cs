@@ -26,68 +26,69 @@ Computer science notes
 
 #### Examples
 
-<details><summary>nested objects, addition, factorials</summary>
+  <details><summary>nested objects, addition, factorials</summary>
 
-```js
-  // showing object depth
-  let animals = {
-    dog: {
-      labrador: {
-        american: 'http://dogpics.com/7423.png',
-        english: 'http://dogpics.com/5274.png'
-      }, 
-      akita: {
-        japanese: 'http://dogpics.com/3486.png',
-        american: 'http://dogpics.com/4843.png'
-      },
-      poodle: {
-        standard: {
-          french: 'http://dogpics.com/8484.png',
-          barbone: 'http://dogpics.com/1268.png'
+  ```js
+    // showing object depth
+    let animals = {
+      dog: {
+        labrador: {
+          american: 'http://dogpics.com/7423.png',
+          english: 'http://dogpics.com/5274.png'
+        }, 
+        akita: {
+          japanese: 'http://dogpics.com/3486.png',
+          american: 'http://dogpics.com/4843.png'
         },
-        miniature: 'http://dogpics.com/1350.png',
-        toy: 'http://dogpics.com/884.png'
+        poodle: {
+          standard: {
+            french: 'http://dogpics.com/8484.png',
+            barbone: 'http://dogpics.com/1268.png'
+          },
+          miniature: 'http://dogpics.com/1350.png',
+          toy: 'http://dogpics.com/884.png'
+        }
+      },
+      cat: 'http://grumpycat.com/mrGrumpy.png'
+    }
+
+    function printObj(obj, count = 0) {
+      for (let prop in obj) {
+        if (typeof obj[prop] === 'object') {
+          console.log('---'.repeat(count), prop + ':');
+          printObj(obj[prop], count + 1);
+        }
+        else console.log('---'.repeat(count), prop + ':', obj[prop]);
       }
-    },
-    cat: 'http://grumpycat.com/mrGrumpy.png'
-  }
+    }
+    printObj(animals);
 
-  function printObj(obj, count = 0) {
-    for (let prop in obj) {
-      if (typeof obj[prop] === 'object') {
-        console.log('---'.repeat(count), prop + ':');
-        printObj(obj[prop], count + 1);
+      // addition
+    function addAllThings(n) {
+      if (n === 1) {
+        console.log('done');
+        return ;
       }
-      else console.log('---'.repeat(count), prop + ':', obj[prop]);
+      else {
+        console.log('n', n);
+        return n + addAllThings(n - 1);
+      }
     }
-  }
-  printObj(animals);
+    addAllThings(4);
 
-    // addition
-  function addAllThings(n) {
-    if (n === 1) {
-      console.log('done');
-      return ;
+
+    // factorials
+    function fac(n) {
+      if (n === 1) return 1;
+      else return n * fac(n - 1);
     }
-    else {
-      console.log('n', n);
-      return n + addAllThings(n - 1);
-    }
-  }
-  addAllThings(4);
 
-
-  // factorials
-  function fac(n) {
-    if (n === 1) return 1;
-    else return n * fac(n - 1);
-  }
-
-  fac(4); // 24
+    fac(4); // 24
 
   ```
+  </details>
 
-</details>
+
 <br/>
 
 ## Linked Lists
