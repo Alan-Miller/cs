@@ -10,7 +10,7 @@ Computer science notes
   - Populate a database (doing calculations for many rows).
 
 
-<details>
+  <details>
 <summary>Alternatives to recursion</summary>
 
   #### hard coded
