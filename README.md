@@ -5,8 +5,11 @@ Computer science notes
 
 ## Alternatives to recursion
 
-<details><summary>Alternatives</summary
->
+<details>
+<summary>
+##Alternatives
+</summary>
+
   #### hard coded
   - for small, known number of times 
 
