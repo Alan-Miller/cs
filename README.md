@@ -40,18 +40,22 @@ Computer science notes
 
 ### Example: addAllThings
 
-```js
-  function addAllThings(n) {
-    if (n === 1) {
-      console.log('done');
-      return ;
+<details><summary>addAllThings</summary>
+  ```js
+    function addAllThings(n) {
+      if (n === 1) {
+        console.log('done');
+        return ;
+      }
+      else {
+        console.log('n', n);
+        return n + addAllThings(n - 1);
+      }
     }
-    else {
-      console.log('n', n);
-      return n + addAllThings(n - 1);
-    }
-  }
-  addAllThings(4
-```
+    addAllThings(4
+  ```
 
-Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
+  - Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
+
+</details>
+
