@@ -3,12 +3,10 @@ Computer science notes
 
 # Recursion
 
-## Alternatives to recursion
+### Alternatives to recursion
 
 <details>
-<summary>
-##Alternatives
-</summary>
+<summary>Alternatives</summary>
 
   #### hard coded
   - for small, known number of times 
@@ -22,17 +20,38 @@ Computer science notes
 
 
   #### variable depth
-  let animals = {
-    dog: {
-      labrador: {
-        american: '',
-        english: ''
-      }, 
-      akita: {
-        japanese: '',
-        american: ''
-      }
-    },
-    cat: ''
-  }
+  ```js
+    let animals = {
+      dog: {
+        labrador: {
+          american: '',
+          english: ''
+        }, 
+        akita: {
+          japanese: '',
+          american: ''
+        }
+      },
+      cat: ''
+    }
+  ```
 </details>
+
+
+### Example: addAllThings
+
+```js
+  function addAllThings(n) {
+    if (n === 1) {
+      console.log('done');
+      return ;
+    }
+    else {
+      console.log('n', n);
+      return n + addAllThings(n - 1);
+    }
+  }
+  addAllThings(4
+```
+
+Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
