@@ -100,49 +100,49 @@ Computer science notes
 - Real case scenarios: 
   - Photo site has user side with gallery and admin side and you need to allow user to rearrange images with drag-and-drop capability in the gallery but still keep track of that order.
 
-  <details><summary>Example: Linked list with add and remove methods</summary>
-  
-  ```js
-    class Node {
-      constructor(val) {
-        this.data = val;
-        this.next = null;
+<details><summary>Example: Linked list with add and remove methods</summary>
+
+```js
+  class Node {
+    constructor(val) {
+      this.data = val;
+      this.next = null;
+    }
+  }
+
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+    // add to list
+    add(val) {
+      let node = new Node(val); console.log(`added ${JSON.stringify(node)}`); // make new node
+      if (!this.head) this.head = node; // if no head, head = node
+      else {
+        let current = this.head; // start at head
+        while (current.next) current = current.next; // traverse list while .next is true
+        current.next = node; // newest node goes on end
       }
     }
-
-    class LinkedList {
-      constructor() {
-        this.head = null;
+    // remove from list
+    remove(val) {
+      let current = this.head;
+      let previous = null;
+      while (current.data !== val) {
+        previous = current;
+        current = current.next;
       }
-      // add to list
-      add(val) {
-        let node = new Node(val); console.log(`added ${JSON.stringify(node)}`); // make new node
-        if (!this.head) this.head = node; // if no head, head = node
-        else {
-          let current = this.head; // start at head
-          while (current.next) current = current.next; // traverse list while .next is true
-          current.next = node; // newest node goes on end
-        }
-      }
-      // remove from list
-      remove(val) {
-        let current = this.head;
-        let previous = null;
-        while (current.data !== val) {
-          previous = current;
-          current = current.next;
-        }
-        previous.next = current.next;
-        console.log(`removed node with value ${JSON.stringify(val)}`);
-      }
+      previous.next = current.next;
+      console.log(`removed node with value ${JSON.stringify(val)}`);
     }
+  }
 
-    let list = new LinkedList();
-    list.add(11);
-    list.add(1);
-    list.add(6);
-    list.add(8);
-    list.remove(6);
-  ```
-  
-  </details>
+  let list = new LinkedList();
+  list.add(11);
+  list.add(1);
+  list.add(6);
+  list.add(8);
+  list.remove(6);
+```
+
+</details>
