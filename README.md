@@ -3,6 +3,7 @@
 Computer science notes
 <br/>
 
+
 ## Recursion
 - Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
 - Real case scenarios: 
@@ -91,6 +92,7 @@ Computer science notes
 
 <br/>
 
+
 ## Linked Lists
 - Each node has data and a pointer property pointing to the next node.
 - This allows for insertion at any place in memory without keeping list item together, which creates problems:
@@ -145,6 +147,77 @@ Computer science notes
   list.add(6);
   list.add(8);
   list.remove(6);
+```
+
+</details>
+
+
+## Binary Search Tree (BST)
+- Has root node.
+- Each node can have a maximum of two children.
+  - The one on the left must be less than parent.
+  - The one on the right must be greater than parent.
+- You build the tree once, and then searching is more efficient after that.
+
+#### Examples
+
+<details><summary>BST</summary>
+
+```js
+  class Node {
+    constructor(val) {
+      this.data = val;
+      this.left = null;
+      this.right = null;
+    }
+  } // end of Node class
+
+
+
+  class BST {
+
+    constructor() {
+      this.root = null;
+    }
+
+    add(val) {
+      let node = new Node(val);
+      // does the tree exist?
+      if (!this.root) {
+        this.root = node;
+        return;
+      }
+      else {
+        let current = this.root;
+        while (current) {
+          if (val > current.data) {
+            if(!current.right) {
+              current.right = node;
+              break;
+            }
+            else current = current.right;
+          }
+          else {
+            if (!current.left) {
+              current.left = node;
+              break;
+            }
+            else current = current.left;
+          }
+        } // end of while
+      } // end of else
+    } // end of add
+
+  } // end of BST class
+
+  let bst = new BST();
+  bst.add(5);
+  bst.add(3);
+  bst.add(6);
+  bst.add(4);
+  bst.add(7);
+  bst.add(5);
+  console.log(JSON.stringify(bst, null, 3));
 ```
 
 </details>
