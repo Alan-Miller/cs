@@ -100,7 +100,9 @@ Computer science notes
 - Real case scenarios: 
   - Photo site has user side with gallery and admin side and you need to allow user to rearrange images with drag-and-drop capability in the gallery but still keep track of that order.
 
-<details><summary>Example: Linked list with add and remove methods</summary>
+#### Example
+
+<details><summary>Linked list with add and remove methods</summary>
 
 ```js
   class Node {
