@@ -41,6 +41,7 @@ Computer science notes
 #### Example: addAllThings
 
 <details><summary>addAllThings</summary>
+  
   ```js
     function addAllThings(n) {
       if (n === 1) {
