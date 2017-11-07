@@ -5,7 +5,7 @@ Computer science notes
 - Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
 
 <details>
-<summary>Alternatives</summary>
+<summary>Alternatives to recursion</summary>
 
   #### hard coded
   - for small, known number of times 
@@ -19,9 +19,9 @@ Computer science notes
 
 </details>
 
-#### Example: variable depth
+#### Examples
 
-<details><summary>print nested objects</summary>
+<details><summary>nested objects, addition, factorials</summary>
 
 ```js
   // showing object depth
@@ -57,40 +57,30 @@ Computer science notes
     }
   }
   printObj(animals);
-```
+
+    // addition
+  function addAllThings(n) {
+    if (n === 1) {
+      console.log('done');
+      return ;
+    }
+    else {
+      console.log('n', n);
+      return n + addAllThings(n - 1);
+    }
+  }
+  addAllThings(4);
+
+
+  // factorials
+  function fac(n) {
+    if (n === 1) return 1;
+    else return n * fac(n - 1);
+  }
+
+  fac(4); // 24
+
+  ```
+
 </details>
-
-
-#### More examples
-
-  <details><summary>addition, factorials</summary>
-    
-    ```js
-
-      // addition
-      function addAllThings(n) {
-        if (n === 1) {
-          console.log('done');
-          return ;
-        }
-        else {
-          console.log('n', n);
-          return n + addAllThings(n - 1);
-        }
-      }
-      addAllThings(4);
-
-
-      // factorials
-      function fac(n) {
-        if (n === 1) return 1;
-        else return n * fac(n - 1);
-      }
-
-      fac(4); // 24
-
-    ```
-
-    
-  </details>
 
