@@ -1,5 +1,7 @@
 # CS
 Computer science notes
+<br/>
+---
 
 ## Recursion
 - Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
@@ -83,5 +85,6 @@ Computer science notes
   ```
 
 </details>
+<br/>
 
 ## Linked Lists
