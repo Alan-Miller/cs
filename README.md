@@ -18,6 +18,7 @@ Computer science notes
   #### while loops
   - good for unknown number of times
 
+</details>
 
   #### variable depth
   ```js
@@ -35,7 +36,6 @@ Computer science notes
       cat: ''
     }
   ```
-</details>
 
 
 #### Example: addAllThings
@@ -53,7 +53,14 @@ Computer science notes
         return n + addAllThings(n - 1);
       }
     }
-    addAllThings(4
+    addAllThings(4);
+
+    function prinObj(obj, count = 0) {
+      for (let prop in obj) {
+        console.log(prop);
+      }
+    }
+    printObj(animals);
   ```
 
   - Each iteration of the recursion function runs and remains on the pending call stack because it cannot yet complete until the last time, when it finally gets a value.
