@@ -63,33 +63,34 @@ Computer science notes
 
 #### More examples
 
-<details><summary>addition, factorials</summary>
-  
-  ```js
+  <details><summary>addition, factorials</summary>
+    
+    ```js
 
-    // addition
-    function addAllThings(n) {
-      if (n === 1) {
-        console.log('done');
-        return ;
+      // addition
+      function addAllThings(n) {
+        if (n === 1) {
+          console.log('done');
+          return ;
+        }
+        else {
+          console.log('n', n);
+          return n + addAllThings(n - 1);
+        }
       }
-      else {
-        console.log('n', n);
-        return n + addAllThings(n - 1);
+      addAllThings(4);
+
+
+      // factorials
+      function fac(n) {
+        if (n === 1) return 1;
+        else return n * fac(n - 1);
       }
-    }
-    addAllThings(4);
 
+      fac(4); // 24
 
-    // factorials
-    function fac(n) {
-      if (n === 1) return 1;
-      else return n * fac(n - 1);
-    }
+    ```
 
-    fac(4); // 24
-
-  ```
-
-</details>
+    
+  </details>
 
