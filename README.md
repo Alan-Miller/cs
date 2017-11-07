@@ -20,8 +20,14 @@ Computer science notes
 
 </details>
 
-  #### variable depth
+
+#### Example: addAllThings
+
+<details><summary>printObj, addAllThings</summary>
+  
   ```js
+
+    // showing object depth
     let animals = {
       dog: {
         labrador: {
@@ -43,29 +49,20 @@ Computer science notes
       },
       cat: 'http://grumpycat.com/mrGrumpy.png'
     }
-  ```
 
-
-#### Example: addAllThings
-
-<details><summary>addAllThings</summary>
-  
-  ```js
     function printObj(obj, count = 0) {
       for (let prop in obj) {
-        // console.log(prop);
         if (typeof obj[prop] === 'object') {
-          console.log('---'.repeat(count) + ' ' + prop);
+          console.log('---'.repeat(count), prop + ':');
           printObj(obj[prop], count + 1);
         }
-        else {
-          console.log(`${'---'.repeat(count)} ${prop}: ${obj[prop]}`)
-        }
+        else console.log('---'.repeat(count), prop + ':', obj[prop]);
       }
     }
     printObj(animals);
 
 
+    // addition
     function addAllThings(n) {
       if (n === 1) {
         console.log('done');
@@ -77,6 +74,15 @@ Computer science notes
       }
     }
     addAllThings(4);
+
+
+    // factorials
+    function fact(n) {
+      if (n === 1) return 1;
+      else return n * fact(n - 1);
+    }
+
+    fact(4); // 24
 
   ```
 
