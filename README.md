@@ -1,25 +1,25 @@
-# cs
+# CS
 Computer science notes
 
 ## Recursion
 
-### Alternatives to recursion
+#### Alternatives to recursion
 
 <details>
 <summary>Alternatives</summary>
 
-  ##### hard coded
+  #### hard coded
   - for small, known number of times 
 
-  ##### for loops
+  #### for loops
   - good for set number of times
   - great for arrays and objects
 
-  ##### while loops
+  #### while loops
   - good for unknown number of times
 
 
-  ##### variable depth
+  #### variable depth
   ```js
     let animals = {
       dog: {
@@ -38,7 +38,7 @@ Computer science notes
 </details>
 
 
-##### Example: addAllThings
+#### Example: addAllThings
 
 <details><summary>addAllThings</summary>
   ```js
